@@ -56,7 +56,7 @@ class StudentController extends Controller
 
                 $mhs->save();
 
-                return redirect('/student')->with(['success' => 'Berhasil ditambahkan']);
+                return redirect('/student')->with('status', 'Berhasil ditambahkan');
             } catch (\Exception $e) {
                 $errorMessage = "Terjadi kesalahan: " . $e->getMessage();
                 return redirect("/student/add")
@@ -69,9 +69,10 @@ class StudentController extends Controller
 
     public function index()
     {
+
         return view("mahasiswa.show", [
             "title" => "Daftar Mahasiswa",
-            "students" => DB::table('students')->paginate(10)
+            "students" => DB::table('students')->paginate(5)
         ]);
 
     }
@@ -110,7 +111,7 @@ class StudentController extends Controller
 
         DB::table('students')->where('nim',$nim)->update($save);
 
-        return redirect('/student')->with(["success"=>"Berhasil diedit"]);
+        return redirect('/student')->with(["status"=>"Berhasil diedit"]);
     }
 
     public function delete($nim)
@@ -118,7 +119,7 @@ class StudentController extends Controller
 
         DB::Table('students')->where('nim',$nim)->delete();
 
-        return redirect('/student')->with('danger','Berhasil dihapus');
+        return redirect('/student')->with('status','Berhasil dihapus');
     }
 
 }
