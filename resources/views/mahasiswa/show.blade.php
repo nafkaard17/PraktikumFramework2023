@@ -7,11 +7,12 @@
 
     <div class="pt-12">
         <div class="mx-auto sm:px-6 lg:px-8">
+            <x-auth-session-status :status="session('status')" />
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <a href="{{route('add')}}">
                         <x-primary-button>
-                            {{ __('Mahasiswa') }}
+                            {{ __('Tambah Mahasiswa') }}
                         </x-primary-button>
                     </a>
                     <div class="relative flex flex-col min-w-0 break-words w-full shadow-xl rounded bg-gray-500 text-dark">
