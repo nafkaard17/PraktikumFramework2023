@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group row mb-3">
                             <label class="col-md-3 mt-2">alamat</label>
-                            <textarea name="alamat" class="form-control-file bg-dark text-light border-0 small col-md-8" style="padding-top: 7px;" required value="{{ old('alamat') }}"></textarea>
+                            <textarea name="alamat" class="bg-dark text-light border-0 col-md-8" required value="{{ old('alamat') }}"></textarea>
                         </div>
                         <div class="form-group row mb-3">
                             <label class="col-md-3 mt-2">Jenis Kelamin</label>
@@ -69,11 +69,20 @@
                         </div>
                         <div class="form-group row mb-3">
                             <label class="col-md-3 mt-2">Kelas</label>
-                            <select name="kelas" class="form-control bg-dark text-light border-0 small col-md-8" required>
-                                <option value="">Pilih</option>
-                                <option value="Pagi">Kelas Pagi</option>
-                                <option value="Sore">Kelas Sore</option>
-                            </select>
+                            <div class="p-2 col-md-8 bg-dark text-light border-0">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="kelas" id="kelas" value="Kelas Pagi">
+                                    <label class="form-check-label" for="kelas">
+                                        Kelas Pagi
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="kelas" id="kelas" value="Kelas Sore">
+                                    <label class="form-check-label" for="kelas">
+                                        Kelas Sore
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
