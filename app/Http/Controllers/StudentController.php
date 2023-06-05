@@ -9,10 +9,16 @@ use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
+    public function index()
+    {
+        return view("mahasiswa.show", [
+            "title" => "Daftar Mahasiswa",
+            "students" => DB::table('students')->paginate(5)
+        ]);
+    }
 
     public function create()
     {
-
         return view ('mahasiswa.addmahasiswa', [
             "title" => "Tambah Mahasiswa",
         ]);
@@ -64,16 +70,6 @@ class StudentController extends Controller
                     ->withInput();
             }
         }
-
-    }
-
-    public function index()
-    {
-
-        return view("mahasiswa.show", [
-            "title" => "Daftar Mahasiswa",
-            "students" => DB::table('students')->paginate(5)
-        ]);
 
     }
 
