@@ -51,7 +51,9 @@
                     >
                         <div class="text-sky-950 flex-auto px-4 lg:px-10 py-10 pt-0">
                             <div class="text-sky-950 text-center my-12 font-bold">
-                                <x-application-logo class="block m-auto h-28 w-auto fill-current text-gray-800"/>
+                                <a href="{{ route('/') }}">
+                                    <x-application-logo class="block m-auto h-28 w-auto fill-current text-gray-800"/>
+                                </a>
                                 <h1 class="mt-4 text-3xl">Register</h1>
                             </div>
                             <form method="post" action="{{ route('register') }}">
